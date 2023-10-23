@@ -2,7 +2,8 @@
 //
 // Rows contain your columns.
 
-:root {
+:root,
+:host {
   @each $name, $value in $grid-breakpoints {
     --#{$prefix}breakpoint-#{$name}: #{$value};
   }
@@ -22,13 +23,15 @@
   .grid {
     display: grid;
     grid-template-rows: repeat(var(--#{$prefix}rows, 1), 1fr);
-    grid-template-columns: repeat(var(--#{$prefix}columns, #{$grid-columns}), 1fr);
+    grid-template-columns: repeat(
+      var(--#{$prefix}columns, #{$grid-columns}),
+      1fr
+    );
     gap: var(--#{$prefix}gap, #{$grid-gutter-width});
 
     @include make-cssgrid();
   }
 }
-
 
 // Columns
 //

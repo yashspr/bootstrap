@@ -3,6 +3,8 @@
 # Hugo files
 /resources/
 /.hugo_build.lock
+/dist
+/final
 
 # Numerous always-ignore extensions
 *.diff

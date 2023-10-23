@@ -97,7 +97,8 @@
     "watch-css-docs": "nodemon --watch site/assets/scss/ --ext scss --exec \"npm run css-lint\"",
     "watch-css-test": "nodemon --watch scss/ --ext scss,js --exec \"npm run css-test\"",
     "watch-js-main": "nodemon --watch js/src/ --ext js --exec \"npm-run-all js-lint js-compile\"",
-    "watch-js-docs": "nodemon --watch site/assets/js/ --ext js --exec \"npm run js-lint\""
+    "watch-js-docs": "nodemon --watch site/assets/js/ --ext js --exec \"npm run js-lint\"",
+    "postcss-transform": "postcss dist/css/bootstrap.min.css -o final/bootstrap.min.css --config postcss.config.js"
   },
   "peerDependencies": {
     "@popperjs/core": "^2.11.8"
@@ -142,6 +143,7 @@
     "npm-run-all2": "^6.0.6",
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
+    "postcss-rem-to-pixel": "^4.1.2",
     "rollup": "^3.29.3",
     "rollup-plugin-istanbul": "^4.0.0",
     "rtlcss": "^4.1.1",
@@ -180,5 +182,8 @@
     "peerDependencies": {
       "@popperjs/core": "^2.11.8"
     }
+  },
+  "dependencies": {
+    "postcss-scss": "^4.0.9"
   }
 }
